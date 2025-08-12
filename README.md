@@ -5,7 +5,7 @@
 [![Language](https://img.shields.io/badge/language-C/C++-green.svg)](#)
 
 ## 📌 Overview
-The **Duo Energy Monitoring System** is an **ESP32-based open-source project** designed to measure, monitor, and analyze the energy consumption of connected electrical devices in **real-time**.  
+The **Duo Energy Monitoring System** is an **ESP32-based** designed to measure, monitor, and analyze the energy consumption of connected electrical devices in **real-time**.  
 It integrates **PZEM-004T energy meters**, **alert indicators**, **SMS Alert**, and **cloud connectivity** for intelligent data visualization and alerts.
 
 This project aims to provide a **low-cost,transparent, modular, and IoT-ready solution** for households, laboratories, and small-scale industries to track power usage, optimize consumption, and enhance energy efficiency.
