@@ -24,84 +24,81 @@ This project aims to provide a **low-cost,transparent, modular, and IoT-ready so
 ---
 
 ## 📦 Hardware Components
-| Component | Description | Qty |
-|-----------|-------------|-----|
-| ESP32 | Main MCU with Wi-Fi & Bluetooth | 1 |
-| PZEM-004T v3.0 | Energy monitoring sensor | 1–2 |
-| TTL ↔ UART Converter | Enables multi-drop Modbus RTU | 1 |
-| Active Buzzer | Audio alert system | 1 |
-| LEDs (Green, Red, Blue) | Status indicators | 3 |
-| OLED/LCD Display | Local data visualization | 1 |
-| Power Supply | 5V regulated | 1 |
+| Component                   | Description                     | Qty |
+|-----------------------------|---------------------------------|-----|
+| **ESP32**                   | Main MCU with Wi-Fi & Bluetooth | 1   |
+| **PZEM-004T v3.0**          | Energy monitoring sensor        | 1–2 |
+| **TTL ↔ UART Converter**    | Enables multi-drop Modbus RTU   | 1   |
+| **Active Buzzer**           | Audio alert system              | 1   |
+| **LED Indicators**          | Green (Normal), Red (Alert), Blue (Communication)s               | 3   |
+| **LCD Display**             | Local data visualization        | 1   |
+| **Power Supply**            | 5V regulated                    | 1   |
 
 ---
+## Software Requirements
+
+- PlatformIO (Arduino Framework)
+- ESP32 Board Support (via Arduino Boards Manager)
+
+### Required libraries:
+  - Wire.h
+
+ ---   
+
+Cloud Integration:
+- Blynk
+- Thingspeak
 
 ## 📂 Project Structure
-
-DUO-EM3/
+<pre> 
+├── src/
+│   ├── main.cpp             # Main firmware logic
+│   ├── config.h             # System configuration
+│   ├── alert_handler.cpp    # Buzzer and LED management
+│   ├── display_handler.cpp  # OLED display rendering
+│   ├── pzem_handler.cpp    # PZEM-004T readings
+│   ├── comms_handler.cpp    # Cloud/GSM/Blynk integration
 │
-├── main.py # Main script
-├── config.py # Configuration & system constants
-├── utilities/
-│ ├── alert_handler.py # Manages buzzer & LED indicators
-│ ├── display_handler.py # LCD/OLED update logic
-│ ├── pzem_handler.py # Reads data from PZEM modules
-│ └── comms_handler.py # Handles Wi-Fi / GSM communication
-├── README.md # Project documentation
-└── LICENSE # Open-source license file
-
+├── docs/
+│   ├── wiring_diagram.png   # Circuit wiring reference
+│   ├── protocol_notes.md    # Modbus communication notes
+│
+├── README.md                # Project documentation
+├── LICENSE                  # Open source license
+</pre>
 
 
 ---
 
 ## ⚙️ Installation & Setup
+1. **Clone Repository**
+  ```bash
+  git clone https://github.com/yourusername/smart-energy-monitor.git
+  cd smart-energy-monitor
+  ```
 
-### 1️⃣ Prerequisites
-- Install **[MicroPython](https://micropython.org/)** firmware on ESP32-DevKit.
-- Use **Thonny** or **ampy** to upload `.py` scripts.
-- Have a configured **PZEM-004T** module connected via **MAX485 RS485 converter**.
+2. **Install Libraries**
+  - Open platformIO Extension in **VsCode** 
+  - Go to Sketch → Include Library → Manage Libraries
+  - Install required dependencies
 
-### 2️⃣ Hardware Wiring
-#### ESP32 ↔ MAX485 ↔ PZEM-004T
-| ESP32 Pin | MAX485 Pin | PZEM-004T Pin |
-|-----------|------------|--------------|
-| GPIO17 (TX) | DI | RX |
-| GPIO16 (RX) | RO | TX |
-| 5V | VCC | VCC |
-| GND | GND | GND |
-| DE/RE | GPIO4 | — |
+3. Configure Settings
+  - Edit **config.h** to match your hardware pins and preferences.
+  - Upload Firmware
+  - Select ESP32 DevKit from Tools → Board
+  - Upload via USB
 
-### 3️⃣ Software Setup
-```bash
-# Clone this repository
-git clone https://github.com/username/Duo-EM3.git
-
-# Upload files to ESP32
-ampy --port COM3 put main.py
-ampy --port COM3 put config.py
-ampy --port COM3 put utilities/
-
-🚦 Usage
-Power up the ESP32-DevKit and connected sensors.
-The system will initialize and start reading data.
-Alerts will trigger based on thresholds set in config.py.
-Data can be logged locally or sent to the cloud (optional).
-
-🔄 Future Enhancements
-Web dashboard for remote monitoring.
-AI-based anomaly detection in power usage.
-Multi-device MQTT integration.
-Battery backup support.
+4. Connect Hardware
+  - Wire components as per the circuit diagram in /docs/wiring_diagram.png
 
 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 🤝 Contribution
-We welcome contributions! Please:
-Fork the repository.
-Create a new branch: git checkout -b feature/YourFeature.
-Commit your changes: git commit -m 'Add new feature'.
-Push and open a Pull Request.
+  - We welcome community contributions!
+  - Report issues via the GitHub Issues tab.
+  - Submit pull requests for bug fixes or feature additions.
+  - Improve documentation for better adoption.
 
 📧 Contact
 Maintainer: Saviour – Embedded Hardware Designer
