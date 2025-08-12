@@ -90,6 +90,7 @@ Cloud Integration:
 
 4. Connect Hardware
   - Wire components as per the circuit diagram in /docs/wiring_diagram.png
+---
 
 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
@@ -100,10 +101,13 @@ This project is licensed under the MIT License – see the LICENSE file for deta
   - Submit pull requests for bug fixes or feature additions.
   - Improve documentation for better adoption.
 
-📧 Contact
-Maintainer: Saviour – Embedded Hardware Designer
-📍 Accra, Ghana
-✉️ Email: senamdagadusaviour@gmail.com
-🔗 GitHub: -------------------------
+---
+## 📧 Contact Maintainer
+
+- **Name:** Saviour Dagadu – Embedded Hardware Designer  
+- **📍 Location:** Accra, Ghana  
+- **✉️ Email:** [senamdagadusaviour@gmail.com](mailto:senamdagadusaviour@gmail.com)  
+- **🔗 GitHub:** [SaviourDagadu](https://github.com/SaviourDagadu)
+
 
 
