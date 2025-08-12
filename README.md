@@ -1,7 +1,7 @@
 # Dual-Tenant Energy Monitoring System
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-PlatformIO)](#)
+[![Platform](https://img.shields.io/badge/platform-PlatformIO-orange.svg)](#)
 [![Language](https://img.shields.io/badge/language-C/C++-green.svg)](#)
 
 ## 📌 Overview
